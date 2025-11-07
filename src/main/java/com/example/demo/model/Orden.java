@@ -23,13 +23,13 @@ public class Orden {
 	private Double total;
 	
 	@ManyToOne
-	private Usuario Usuario;
+	private Usuario usuario;
 	
 	@OneToMany(mappedBy = "orden")
 	private List<DetalleOrden> detalle;
 
 	public Orden() {
-		super();
+		
 	}
 
 	public Orden(Integer id, String numero, Date fechaCreacion, Double total) {
@@ -72,12 +72,13 @@ public class Orden {
 		this.total = total;
 	}
 
+
 	public Usuario getUsuario() {
-		return Usuario;
+		return usuario;
 	}
 
 	public void setUsuario(Usuario usuario) {
-		Usuario = usuario;
+		this.usuario = usuario;
 	}
 
 	public List<DetalleOrden> getDetalle() {

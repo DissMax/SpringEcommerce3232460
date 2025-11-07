@@ -11,25 +11,24 @@ import jakarta.persistence.Table;
 @Table(name = "productos")
 public class Producto {
 
-	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //anotacion JPA
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // anotacion JPA
 	private Integer id;
 	private String nombre;
-	private double precio;
+	private Double precio;
 	private Integer cantidad;
 	private String descripcion;
 	private String imagen;
-	
+
 	@ManyToOne
-	private String usuario;
+	private Usuario usuario;
 
 	public Producto() {
-		super();
+
 	}
 
-	public Producto(Integer id, String nombre, double precio, Integer cantidad, String descripcion, String imagen,
-			String usuario) {
+	public Producto(Integer id, String nombre, Double precio, Integer cantidad, String descripcion, String imagen,
+			Usuario usuario) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -60,7 +59,7 @@ public class Producto {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 
@@ -88,15 +87,18 @@ public class Producto {
 		this.imagen = imagen;
 	}
 
-	public String getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(String usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", cantidad=" + cantidad
+				+ ", descripcion=" + descripcion + ", imagen=" + imagen + "]";
+	}
+
 }

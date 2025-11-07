@@ -16,8 +16,8 @@ public class DetalleOrden {
 	private Integer id;
 	private String nombre;
 	private Double cantidad;
-	private double precio;
-	private double total;
+	private Double precio;
+	private Double total;
 	
 	@ManyToOne
 	private Orden orden;
@@ -26,7 +26,7 @@ public class DetalleOrden {
 	private Producto productos;
 
 	public DetalleOrden() {
-		super();
+	
 	}
 
 	public DetalleOrden(Integer id, String nombre, Double cantidad, double precio, double total) {
