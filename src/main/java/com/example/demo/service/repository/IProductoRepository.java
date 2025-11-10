@@ -8,5 +8,4 @@ import com.example.demo.model.Producto;
 @Repository
 public interface IProductoRepository extends JpaRepository<Producto, Integer>{
 	
-
 }
